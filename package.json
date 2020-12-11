@@ -1,0 +1,57 @@
+{
+  "name": "getir_challenge_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint \"**/*.ts\" --quiet --fix",
+    "start": "node ./dist/server",
+    "debug": "node --inspect -r ts-node/register .",
+    "test": "cross-env NODE_ENV=test mocha .mocharc.json --exit",
+    "postinstall": "npm run build"
+  },
+  "author": "Serhii Hanchak",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "D": "^1.0.0",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "joi": "^17.3.0",
+    "lodash": "^4.17.20",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.5",
+    "moongoose": "0.0.5",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^4.1.5",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/express": "^4.17.9",
+    "@types/joi": "^14.3.4",
+    "@types/lodash": "^4.14.165",
+    "@types/mocha": "^8.2.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.11",
+    "@types/supertest": "^2.0.10",
+    "@types/swagger-ui-express": "^4.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "eslint": "^7.15.0",
+    "eslint-config-standard-with-typescript": "^19.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "mocha": "^8.2.1",
+    "supertest": "^6.0.1",
+    "ts-node": "^9.1.1"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}

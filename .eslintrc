@@ -1,0 +1,31 @@
+{
+  "extends": "standard-with-typescript",
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "root":true,
+  "rules": {
+    "@typescript-eslint/require-await": 0,
+    "computed-property-spacing": 0,
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        "allowDestructuring": true,
+        "allowedNames": [
+          "_this"
+        ]
+      }
+    ],
+    "@typescript-eslint/no-misused-promises": 1,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-extraneous-class": 1,
+    "@typescript-eslint/no-floating-promises": 0,
+    "@typescript-eslint/prefer-optional-chain":0,
+    "@typescript-eslint/naming-convention":0,
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
+}
+

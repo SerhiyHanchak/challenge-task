@@ -1,0 +1,8 @@
+{
+  "extension": ["ts"],
+  "spec": "**/*.spec.ts",
+  "require": "ts-node/register",
+  "recursive": true,
+  "reporter": "spec",
+  "timeout": 6000
+}

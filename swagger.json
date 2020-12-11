@@ -1,0 +1,114 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "description": "Documention for challenge task api",
+      "version": "1.0.0",
+      "title": "Tasks API",
+      "license": {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+  },
+  "schemes": ["http"],
+  "host": "localhost:3600",
+  "basePath": "/",
+  "paths" : {
+      "/" : {
+          "post" : {
+              "summary" : "Get records by params",
+              "description": "get all records by the params",
+              "produces": ["application/json"],
+              "parameters": [
+                {
+                  "in": "body",
+                  "name":"params for filtering",
+                  "description":"test",
+                  "required": true,
+                  "schema": {
+                    "$ref":"#/definitions/BodySchema"
+                    }
+                }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "successful operation",
+                      "schema": {
+                          "items": {
+                              "$ref": "#/definitions/getRecordsResponse"
+                          }
+                      }
+                  },
+                  "400": {
+                      "description": "Validation issue",
+                      "schema": {
+                          "$ref": "#/definitions/ValidationResponse"
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "definitions": {
+      "getRecordsResponse": {
+          "type": "object",
+          "properties": {
+              "code": {
+                   "type": "integer"
+              },
+              "msg": {
+                  "type": "string"
+              },
+              "records": {
+                  "type": "array",
+                  "items":{"$ref": "#/definitions/record"}
+              }
+          }
+      },
+      "BodySchema": {
+        "type":"object",
+        "properties": {
+            "startDate": {
+                 "type": "string",
+                 "example":"2016-05-26"
+            },
+            "endDate": {
+                "type": "string",
+                "example":"2016-07-02"
+            },
+            "minCount": {
+                "type": "integer",
+                "example": 1000
+            },
+            "maxCount": {
+                "type": "integer",
+                "example": 2000
+            }
+        }
+    },
+      "record": {
+          "type": "object",
+          "properties": {
+              "key": {
+                  "type": "string"
+              },
+              "createdAt": {
+                  "type": "string"
+              },
+              "totalCount": {
+                  "type": "integer"
+              }
+          }
+      },
+      "ValidationResponse": {
+        "type": "object",
+        "properties": {
+            "code": {
+                "type": "string"
+            },
+            "msg": {
+                "type": "string"
+            }
+        }
+  }
+}
+}
