@@ -10,7 +10,7 @@ describe('few tests to check validation and not found status', () => {
       .get('/abracadabra')
       .expect(404)
 
-    expect(res.body).to.has.property('code', 1)
+    expect(res.body).to.has.property('code', 3)
     expect(res.body).to.has.property('msg', 'Resource not found')
   })
 
