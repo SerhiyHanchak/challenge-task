@@ -3,26 +3,26 @@
   "info": {
       "description": "Documention for challenge task api",
       "version": "1.0.0",
-      "title": "Tasks API",
+      "title": "Getir challenge api task",
       "license": {
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
       }
   },
   "schemes": ["http"],
-  "host": "localhost:3600",
   "basePath": "/",
   "paths" : {
       "/" : {
           "post" : {
               "summary" : "Get records by params",
+              "tags":["getRecords"],
               "description": "get all records by the params",
               "produces": ["application/json"],
               "parameters": [
                 {
                   "in": "body",
                   "name":"params for filtering",
-                  "description":"test",
+                  "description":"the params which will be used for filtering",
                   "required": true,
                   "schema": {
                     "$ref":"#/definitions/BodySchema"

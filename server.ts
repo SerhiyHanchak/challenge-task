@@ -1,7 +1,7 @@
 import * as http from 'http'
 import App from './src/app'
 import { MongoHelper } from './src/db'
-import { MONGO_URL } from './src/config'
+import { MONGO_URL, PORT } from './src/config'
 
 class Server {
   private static serverInstance: Server
@@ -25,7 +25,7 @@ class Server {
   }
 
   private runServer (): void {
-    this.port = this.normalizePort(process.env.PORT || 3600)
+    this.port = this.normalizePort(PORT)
     App.set('port', this.port)
     this.createServer()
   }

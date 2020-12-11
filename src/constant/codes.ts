@@ -1,4 +1,4 @@
-export const RESPONCE_CODES = {
+export const RESPONSE_CODES = {
   SUCCESS: 0,
   VALIDATION_ERROR: 1,
   ERROR: 2,

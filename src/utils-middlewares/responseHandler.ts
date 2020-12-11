@@ -4,6 +4,7 @@ import {
   Request,
   Response
 } from 'express'
+import { MESSAGES } from '../constant/messages'
 
 const { OK } = httpStatus
 
@@ -15,7 +16,7 @@ export function responseHandler (req: Request, res: Response, next: NextFunction
     if (result) {
       res.send({
         code: 0,
-        msg: 'Success',
+        msg: MESSAGES.SUCCESS_MESSAGE,
         records: result
       })
     }

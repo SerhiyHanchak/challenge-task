@@ -1,1 +1,2 @@
-export * from './responceCodes'
+export * from './codes'
+export * from './messages'
