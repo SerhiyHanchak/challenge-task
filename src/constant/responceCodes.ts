@@ -1,0 +1,6 @@
+export const RESPONCE_CODES = {
+  SUCCESS: 0,
+  VALIDATION_ERROR: 1,
+  ERROR: 2,
+  NOT_FOUND: 3
+}

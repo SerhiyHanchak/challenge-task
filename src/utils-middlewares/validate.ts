@@ -1,7 +1,9 @@
-import { HttpError } from '../utils/httpError'
 import { Response, Request, NextFunction } from 'express'
 import { Schema } from 'joi'
 import * as _ from 'lodash'
+
+import { HttpError } from '../utils/httpError'
+import { RESPONCE_CODES } from '../constant'
 
 export const requestValidate = (schema: Schema) => async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -20,6 +22,6 @@ export const requestValidate = (schema: Schema) => async (req: Request, res: Res
     err.message = details.message
     err.statusCode = 400
     // eslint-disable-next-line
-    return next(new HttpError(400, `Bad request - ${err}`, 1))
+    return next(new HttpError(400, `Bad request - ${err}`, RESPONCE_CODES.VALIDATION_ERROR))
   }
 }
