@@ -1,17 +1,17 @@
-name: Node.js CI
+name: project ci/cd process
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "feature/*" ]
   pull_request:
     branches: [ "master" ]
 
 jobs:
-  dep_check:
+  dependency_check:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -24,12 +24,12 @@ jobs:
     - run: npm ci
     - run: npm outdated || true
 
-  build:
+  test:
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -38,6 +38,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: echo ${{$DOCKER_TOKEN}}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
