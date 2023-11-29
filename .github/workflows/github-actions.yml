@@ -9,6 +9,9 @@ on:
 jobs:
   dep_check:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
 
     steps:
       - name: Check outdated dependencies
@@ -22,7 +25,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
