@@ -22,7 +22,7 @@ jobs:
         cache: 'npm'
 
     - run: npm ci
-    - run: npm run outdated || true
+    - run: npm outdated || true
 
   build:
 
