@@ -67,4 +67,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USER}}/clockbox:latest
+          tags: ${{ secrets.DOCKER_USER}}/task-challenge:latest
