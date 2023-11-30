@@ -68,7 +68,7 @@ jobs:
 
     steps:
     - name: Login to Docker Hub
-      run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_TOKEN }} --password-stdin
+      run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u serhiyhanchak -p ${{ secrets.DOCKER_TOKEN }}
 
     - name: Push Docker Image
       run: docker push serhiyhanchak/task-challenge:latest
