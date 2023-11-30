@@ -64,6 +64,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    environment: dev
     needs: docker_build
 
     steps:
