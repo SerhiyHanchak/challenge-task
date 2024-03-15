@@ -46,7 +46,7 @@ npm run lint
 
 ## Api Reference
 
-Api documentation is available by uri 
+Api documentation should be available by uri 
 `/api-doc`
 
 
